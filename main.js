@@ -1,16 +1,25 @@
 // Add your JavaScript here
 
 document.addEventListener('DOMContentLoaded', function() {
-  document.getElementById('calculate-btn').addEventListener('click', function() {
-    // Get input values
-    const materialCost = parseFloat(document.getElementById('material-cost').value) || 0;
-    const laborCost = parseFloat(document.getElementById('labor-cost').value) || 0;
-    const overheadCost = parseFloat(document.getElementById('overhead-cost').value) || 0;
+  const materialCostInput = document.getElementById('material-cost');
+  const laborCostInput = document.getElementById('labor-cost');
+  const overheadCostInput = document.getElementById('overhead-cost');
+  const totalCostElement = document.getElementById('total-cost');
 
-    // Calculate total cost
+  function calculateTotalCost() {
+    const materialCost = parseFloat(materialCostInput.value) || 0;
+    const laborCost = parseFloat(laborCostInput.value) || 0;
+    const overheadCost = parseFloat(overheadCostInput.value) || 0;
+
     const totalCost = materialCost + laborCost + overheadCost;
+    totalCostElement.textContent = totalCost.toFixed(2);
+  }
 
-    // Display result
-    document.getElementById('total-cost').textContent = totalCost.toFixed(2);
-  });
+  // Add event listeners for input changes
+  materialCostInput.addEventListener('input', calculateTotalCost);
+  laborCostInput.addEventListener('input', calculateTotalCost);
+  overheadCostInput.addEventListener('input', calculateTotalCost);
+
+  // Initial calculation on page load
+  calculateTotalCost();
 });
