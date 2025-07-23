@@ -4,36 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Công Cụ Tính Toán Giá Thành Sản Phẩm</title>
+  <!-- Thêm Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
   <link href='style.css' rel='stylesheet'>
 </head>
 <body>
-  <header>
-    <h1>Công Cụ Tính Toán Giá Thành Sản Phẩm</h1>
-    <p>Nhập thông tin để tính toán giá thành sản phẩm của bạn</p>
+  <header class="bg-gray-800 text-white text-center py-6">
+    <h1 class="text-3xl font-bold">Công Cụ Tính Toán Giá Thành Sản Phẩm</h1>
+    <p class="mt-2 text-lg">Nhập thông tin để tính toán giá thành sản phẩm của bạn</p>
   </header>
 
-  <section id="calculator">
-    <h2>Tính Toán Giá Thành</h2>
-    <div class="form-group">
-      <label for="material-cost">Chi Phí Nguyên Liệu:</label>
-      <input type="number" id="material-cost" value="0" min="0">
+  <section id="calculator" class="container mx-auto mt-8 p-6 bg-white shadow-md rounded-lg">
+    <h2 class="text-2xl font-semibold mb-4">Tính Toán Giá Thành</h2>
+    <div class="mb-4">
+      <label for="material-cost" class="block text-gray-700 text-sm font-bold mb-2">Chi Phí Nguyên Liệu:</label>
+      <input type="number" id="material-cost" value="0" min="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
-    <div class="form-group">
-      <label for="labor-cost">Chi Phí Nhân Công:</label>
-      <input type="number" id="labor-cost" value="0" min="0">
+    <div class="mb-4">
+      <label for="labor-cost" class="block text-gray-700 text-sm font-bold mb-2">Chi Phí Nhân Công:</label>
+      <input type="number" id="labor-cost" value="0" min="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
-    <div class="form-group">
-      <label for="overhead-cost">Chi Phí Khác (Chi Phí Chung):</label>
-      <input type="number" id="overhead-cost" value="0" min="0">
+    <div class="mb-6">
+      <label for="overhead-cost" class="block text-gray-700 text-sm font-bold mb-2">Chi Phí Khác (Chi Phí Chung):</label>
+      <input type="number" id="overhead-cost" value="0" min="0" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
     </div>
-    <button id="calculate-btn">Tính Toán</button>
-    <div id="result">
-      <h3>Giá Thành Dự Kiến:</h3>
-      <p id="total-cost">0</p>
+    <button id="calculate-btn" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Tính Toán</button>
+    <div id="result" class="mt-6">
+      <h3 class="text-xl font-semibold">Giá Thành Dự Kiến:</h3>
+      <p id="total-cost" class="text-2xl text-green-600 font-bold mt-2">0</p>
     </div>
   </section>
 
-  <footer>
+  <footer class="bg-gray-800 text-white text-center py-6 mt-8">
     <p>&copy; 2023 Công Cụ Tính Toán Giá Thành. All rights reserved.</p>
   </footer>
 
