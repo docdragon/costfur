@@ -2,6 +2,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const tabItems = document.querySelectorAll('.dashboard li');
     const tabContents = document.querySelectorAll('.tab-content');
+    const storageAmountInput = document.getElementById('storageAmount');
 
     tabItems.forEach(item => {
         item.addEventListener('click', () => {
@@ -15,4 +16,16 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById(targetTab).classList.add('active');
         });
     });
+
+    // Add event listener for storageAmountInput if it exists
+    if (storageAmountInput) {
+        storageAmountInput.addEventListener('input', () => {
+            // Calculator logic goes here
+            const storageAmount = storageAmountInput.value;
+            const costDisplay = document.getElementById('costDisplay');
+            // Assuming a simple cost calculation, e.g., $0.023 per GB
+            const estimatedCost = storageAmount * 0.023;
+            costDisplay.textContent = `$${estimatedCost.toFixed(2)}`;
+        });
+    }
 });
