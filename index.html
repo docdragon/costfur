@@ -3,65 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Báo Giá Quảng Cáo Bảng Hiệu Chuyên Nghiệp</title>
+  <title>Công Cụ Tính Toán Giá Thành Sản Phẩm</title>
   <link href='style.css' rel='stylesheet'>
 </head>
 <body>
   <header>
-    <h1>Dịch Vụ Quảng Cáo Bảng Hiệu Chuyên Nghiệp</h1>
-    <p>Giải pháp toàn diện cho mọi nhu cầu quảng cáo của bạn</p>
+    <h1>Công Cụ Tính Toán Giá Thành Sản Phẩm</h1>
+    <p>Nhập thông tin để tính toán giá thành sản phẩm của bạn</p>
   </header>
 
-  <section id="services">
-    <h2>Dịch Vụ Của Chúng Tôi</h2>
-    <div class="service-item">
-      <h3>Thiết Kế Bảng Hiệu</h3>
-      <p>Thiết kế sáng tạo và chuyên nghiệp, đảm bảo thu hút sự chú ý.</p>
+  <section id="calculator">
+    <h2>Tính Toán Giá Thành</h2>
+    <div class="form-group">
+      <label for="material-cost">Chi Phí Nguyên Liệu:</label>
+      <input type="number" id="material-cost" value="0" min="0">
     </div>
-    <div class="service-item">
-      <h3>Thi Công Lắp Đặt</h3>
-      <p>Lắp đặt nhanh chóng, an toàn và đúng kỹ thuật.</p>
+    <div class="form-group">
+      <label for="labor-cost">Chi Phí Nhân Công:</label>
+      <input type="number" id="labor-cost" value="0" min="0">
     </div>
-    <div class="service-item">
-      <h3>Bảo Trì Sửa Chữa</h3>
-      <p>Dịch vụ bảo trì, sửa chữa định kỳ, giúp bảng hiệu luôn mới đẹp.</p>
+    <div class="form-group">
+      <label for="overhead-cost">Chi Phí Khác (Chi Phí Chung):</label>
+      <input type="number" id="overhead-cost" value="0" min="0">
     </div>
-  </section>
-
-  <section id="quote">
-    <h2>Yêu Cầu Báo Giá</h2>
-    <form id="quote-form">
-      <div class="form-group">
-        <label for="name">Họ và Tên:</label>
-        <input type="text" id="name" name="name" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
-      </div>
-      <div class="form-group">
-        <label for="phone">Điện Thoại:</label>
-        <input type="tel" id="phone" name="phone">
-      </div>
-      <div class="form-group">
-        <label for="service">Dịch Vụ Quan Tâm:</label>
-        <select id="service" name="service">
-          <option value="design">Thiết Kế Bảng Hiệu</option>
-          <option value="installation">Thi Công Lắp Đặt</option>
-          <option value="maintenance">Bảo Trì Sửa Chữa</option>
-          <option value="other">Khác</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="details">Chi Tiết Yêu Cầu:</label>
-        <textarea id="details" name="details" rows="4" required></textarea>
-      </div>
-      <button type="submit">Gửi Yêu Cầu</button>
-    </form>
+    <button id="calculate-btn">Tính Toán</button>
+    <div id="result">
+      <h3>Giá Thành Dự Kiến:</h3>
+      <p id="total-cost">0</p>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2023 Dịch Vụ Quảng Cáo Bảng Hiệu. All rights reserved.</p>
+    <p>&copy; 2023 Công Cụ Tính Toán Giá Thành. All rights reserved.</p>
   </footer>
 
   <script defer type="text/javascript" src="main.js"></script>

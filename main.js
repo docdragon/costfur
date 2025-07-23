@@ -1,4 +1,4 @@
-# Add your JavaScript here
+// Add your JavaScript here
 
 // Example: Form submission handling
 document.getElementById('quote-form').addEventListener('submit', function(event) {
