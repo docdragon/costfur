@@ -1,8 +1,14 @@
 // Add your JavaScript here
 
-// Example: Form submission handling
-document.getElementById('quote-form').addEventListener('submit', function(event) {
-  event.preventDefault();
-  // Process form data here (e.g., send to a server)
-  alert('Yêu cầu báo giá đã được gửi!');
+document.getElementById('calculate-btn').addEventListener('click', function() {
+  // Get input values
+  const materialCost = parseFloat(document.getElementById('material-cost').value) || 0;
+  const laborCost = parseFloat(document.getElementById('labor-cost').value) || 0;
+  const overheadCost = parseFloat(document.getElementById('overhead-cost').value) || 0;
+
+  // Calculate total cost
+  const totalCost = materialCost + laborCost + overheadCost;
+
+  // Display result
+  document.getElementById('total-cost').textContent = totalCost.toFixed(2);
 });
