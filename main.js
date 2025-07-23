@@ -1,25 +1,18 @@
-// Add your JavaScript here
+// Simple script for basic tab switching
+document.addEventListener('DOMContentLoaded', () => {
+    const tabItems = document.querySelectorAll('.dashboard li');
+    const tabContents = document.querySelectorAll('.tab-content');
 
-document.addEventListener('DOMContentLoaded', function() {
-  const materialCostInput = document.getElementById('material-cost');
-  const laborCostInput = document.getElementById('labor-cost');
-  const overheadCostInput = document.getElementById('overhead-cost');
-  const totalCostElement = document.getElementById('total-cost');
+    tabItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Remove active class from all items and contents
+            tabItems.forEach(i => i.classList.remove('active'));
+            tabContents.forEach(c => c.classList.remove('active'));
 
-  function calculateTotalCost() {
-    const materialCost = parseFloat(materialCostInput.value) || 0;
-    const laborCost = parseFloat(laborCostInput.value) || 0;
-    const overheadCost = parseFloat(overheadCostInput.value) || 0;
-
-    const totalCost = materialCost + laborCost + overheadCost;
-    totalCostElement.textContent = totalCost.toFixed(2);
-  }
-
-  // Add event listeners for input changes
-  materialCostInput.addEventListener('input', calculateTotalCost);
-  laborCostInput.addEventListener('input', calculateTotalCost);
-  overheadCostInput.addEventListener('input', calculateTotalCost);
-
-  // Initial calculation on page load
-  calculateTotalCost();
+            // Add active class to the clicked item and corresponding content
+            item.classList.add('active');
+            const targetTab = item.getAttribute('data-tab');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
 });

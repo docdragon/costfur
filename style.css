@@ -38,17 +38,17 @@ header p {
 
 .dashboard {
   width: 250px;
-  background-color: #f1f1f1;
+  background-color: #e9ecef;
   padding: 20px;
   box-sizing: border-box;
-  border-right: 1px solid #ccc;
+  border-right: 1px solid #dee2e6;
 }
 
 .dashboard h2 {
   text-align: center;
   margin-top: 0;
   margin-bottom: 20px;
-  color: #333;
+  color: #007bff;
 }
 
 .dashboard ul {
@@ -125,74 +125,19 @@ header p {
 
 #result {
   margin-top: 30px;
-  text-align: center;
   padding: 20px;
   background-color: #e9ecef;
   border-radius: 8px;
-  border: 1px solid #dee2e6;
+  text-align: center;
 }
 
 #result h3 {
   margin-top: 0;
-  margin-bottom: 15px;
-  color: #343a40;
-  font-size: 1.5em;
-}
-
-#total-cost {
-  font-size: 2.5em;
-  font-weight: 700;
   color: #007bff;
 }
 
-footer {
-  text-align: center;
-  padding: 30px 0;
-  background-color: #343a40;
-  color: #fff;
-  margin-top: 40px;
-  font-size: 0.9em;
-}
-
-@media (max-width: 768px) {
-  .container {
-    flex-direction: column;
-  }
-
-  .dashboard {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ccc;
-  }
-
-  .dashboard ul {
-    display: flex;
-    justify-content: center;
-  }
-
-  .dashboard li {
-    margin: 0 10px 10px 10px;
-  }
-
-  .content {
-    padding: 10px;
-  }
-
-  header h1 {
-    font-size: 2em;
-  }
-
-  #calculator h2,
-  #storage h2 {
-    font-size: 1.8em;
-    margin-bottom: 20px;
-  }
-
-  #total-cost {
-    font-size: 2em;
-  }
-
-  footer {
-    padding: 20px 0;
-  }
+#result p {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: #28a745; /* Green color for total cost */
 }
